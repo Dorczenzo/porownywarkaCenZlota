@@ -1,0 +1,24 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LoadGrid</title>
+</head>
+<body>
+        @{
+            ViewBag.Title = "Load Grid";
+        }
+        @using System.Collections
+        @model IEnumerable
+        @{
+            var grid = new WebGrid((IEnumerable<dynamic>)Model, canPage: true, rowsPerPage: 5);
+        }
+        @grid.GetHtml()
+</body>
+</html>
